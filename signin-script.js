@@ -284,50 +284,6 @@ function clearForm() {
     hideMessages();
 }
 
-// Auto-fill for demo purposes (remove in production)
-function autoFillDemo() {
-    document.getElementById('username').value = 'jamieshawld@gmail.com';
-    document.getElementById('password').value = 'AltCtrl22';
-    
-    // Trigger validation
-    document.getElementById('username').dispatchEvent(new Event('input'));
-    document.getElementById('password').dispatchEvent(new Event('input'));
-}
-
-// Add demo button (for testing - remove in production)
-function addDemoButton() {
-    const demoBtn = document.createElement('button');
-    demoBtn.textContent = 'Auto-fill Demo';
-    demoBtn.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: rgba(0, 255, 136, 0.2);
-        border: 1px solid #00ff88;
-        color: #00ff88;
-        padding: 8px 16px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 12px;
-        z-index: 1000;
-        transition: all 0.3s ease;
-    `;
-    
-    demoBtn.addEventListener('click', autoFillDemo);
-    demoBtn.addEventListener('mouseenter', function() {
-        this.style.background = '#00ff88';
-        this.style.color = '#000000';
-    });
-    demoBtn.addEventListener('mouseleave', function() {
-        this.style.background = 'rgba(0, 255, 136, 0.2)';
-        this.style.color = '#00ff88';
-    });
-    
-    document.body.appendChild(demoBtn);
-}
-
-// Initialize demo button (for testing)
-addDemoButton();
 
 // Parallax Effect
 window.addEventListener('scroll', function() {
@@ -388,4 +344,5 @@ document.addEventListener('DOMContentLoaded', function() {
 // Console welcome message
 console.log('🔐 Sign In page loaded successfully!');
 console.log('📧 Demo credentials: jamieshawld@gmail.com / AltCtrl22');
+
 console.log('�� Use the "Auto-fill Demo" button for quick testing');
